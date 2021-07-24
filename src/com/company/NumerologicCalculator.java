@@ -32,28 +32,28 @@ public class NumerologicCalculator {
             personalityNumber = lifeGoalNumber-soulNumber;
             return new NumerologicPortrait(
                     lifeGoalNumber,
-                    convertToOneDigitOrMasterNumer(lifeGoalNumber),
+                    convertToOneDigitOrMasterNumber(lifeGoalNumber),
                     soulNumber,
-                    convertToOneDigitOrMasterNumer(soulNumber),
+                    convertToOneDigitOrMasterNumber(soulNumber),
                     personalityNumber,
-                    convertToOneDigitOrMasterNumer(personalityNumber));
+                    convertToOneDigitOrMasterNumber(personalityNumber));
         }
 
 
-    private int convertToOneDigitOrMasterNumer(Integer toConvert){
+    private int convertToOneDigitOrMasterNumber(Integer toConvert){
         Integer sum = 0;
 
         Set newset = new HashSet();
         for(int i = 0;i<String.valueOf(toConvert).length(); i++){
 
-            char charval = String.valueOf(toConvert).charAt(i);
-            newset.add(charval);
-            sum += Integer.valueOf(String.valueOf(charval));
+            char charValue = String.valueOf(toConvert).charAt(i);
+            newset.add(charValue);
+            sum += Integer.valueOf(String.valueOf(charValue));
         }
         if (newset.size() ==1) return toConvert;
 
         if(sum.toString().length() != 1) {
-            return convertToOneDigitOrMasterNumer(sum);
+            return convertToOneDigitOrMasterNumber(sum);
         }else return sum;
     }
 
